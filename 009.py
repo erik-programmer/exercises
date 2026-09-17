@@ -3,8 +3,7 @@ def execute(m: dict) -> int:
     for k, v in m.items():
         if isinstance(v, dict):
             t = execute(v)
-            if t > r:
-                r = t
+            r = t if t > r else r
         else:
             if v > r:
                 r = v
